@@ -1,0 +1,23 @@
+<h2 class="titulo-carrito">🛒 CARRITO DE COMPRAS</h2>
+
+<div class="carrito-lista">
+  <div class="item-carrito" *ngFor="let item of carrito">
+    <span>{{ item.nombre }}</span>
+    <span>S/. {{ item.precio }}</span>
+  </div>
+</div>
+
+<h3 class="total">TOTAL A PAGAR: <span>S/. {{ total }}</span></h3>
+
+<button class="btn-generar" (click)="generarBoleta()">🧾 OBTENER BOLETA</button>
+
+<div *ngIf="mostrarBoleta" class="boleta">
+  <h4>🧾 RESTAURANTE AYACUCHO</h4>
+  <hr />
+  <div *ngFor="let item of carrito">
+    {{ item.nombre }} ........ S/.{{ item.precio }}
+  </div>
+  <hr />
+  <strong>TOTAL: S/. {{ total }}</strong>
+  <p class="gracias">¡GRACIAS POR SU COMPRA!</p>
+</div>

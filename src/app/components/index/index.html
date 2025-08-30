@@ -1,0 +1,37 @@
+<!-- Sección con fondo de imagen -->
+<section class="header-fondo">
+  <h1>🍽️ RESTAURANTE AYACUCHO</h1>
+</section>
+
+<!-- Barra de botones -->
+<div class="barra-nav">
+  <div class="nav-botones">
+    <button class="btn-nav">INICIO</button>
+    <button class="btn-nav" routerLink="/delivery">DELIVERY</button>
+    <button class="btn-nav" routerLink="/entregas">ENTREGAS PENDIENTES</button>
+    <button class="btn-nav" routerLink="/contacto">CONTACTO</button>
+    <button class="btn-login" routerLink="/login">lOGIN</button>
+  </div>
+
+  <a routerLink="/carrito" class="btn-carrito">
+    🛒 IR AL CARRITO
+  </a>
+</div>
+
+<!-- Bienvenida -->
+<section class="bienvenida">
+  <h2>¡BIENVENIDO AL SABOR AUTÉNTICO DE AYACUCHO!</h2>
+  <p>DISFRUTA DE NUESTROS MEJORES PLATOS TÍPICOS, HECHOS CON AMOR Y TRADICIÓN.</p>
+</section>
+
+<!-- Comidas -->
+<section class="contenedor-comidas">
+  <div class="card" *ngFor="let comida of comidas">
+    <img [src]="comida.imagen" alt="{{ comida.nombre }}">
+    <div class="info">
+      <h3>{{ comida.nombre.toUpperCase() }}</h3>
+      <p>PRECIO: S/. {{ comida.precio }}</p>
+      <button (click)="agregarAlCarrito(comida)">AGREGAR AL CARRITO</button>
+    </div>
+  </div>
+</section>
